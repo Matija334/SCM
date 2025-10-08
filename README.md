@@ -299,11 +299,11 @@ docker-compose up --build
 3. V stranski vrstici kliknite na Project Settings (Nastavitve projekta).
 4. Izberite zavihek General.
 
-Generirane vrednosti prekopirajte v **scm/frontend/scm/.env**
+Generirane vrednosti prekopirajte v **SCM/frontend/scm/.env**
 
 ###### 6. Zagon frontenda
 
-Postavite se v mapo projekt_local/frontend/scm in izvedite naslednje ukaze:
+Postavite se v mapo SCM/frontend/scm in izvedite naslednje ukaze:
 ```bash
 npm install
 npm run build
