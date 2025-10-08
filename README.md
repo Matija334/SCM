@@ -325,7 +325,7 @@ Uporabniški priročnik, je namenjen novim uporabnikom, da se seznanijo z delova
 Kategorije imajo tudi podkategorije, ki podrobno razložijo, kaj mora uporabnik storiti in kakšni so pogoji, da bo akcija uspešna. Uporabniški priročnik se nahaja v mapi [**documentation/user-manual.pdf**](https://github.com/mihaprah/projekt/blob/main/documentation/user-manual.pdf).
 
 ### Končni izgled aplikacije
-Spodaj so prikazani nekateri končni zaslonski posnetki aplikacije. Vsi posnetki so na voljo v mapi [**documentation/app-photos**](https://github.com/Matija334/SCM/tree/main/documentation/app-photos).
+Spodaj so prikazani nekateri končni zaslonski posnetki aplikacije. Vsi posnetki so na voljo v mapi [**documentation/app-photos**](https://github.com/Matija334/SCM/tree/main/documentation/documentation-photos).
 
 <p align="center">
   <img alt="dashboard" width="800" src="https://github.com/mihaprah/projekt/assets/111431985/66186e0e-8c1b-4564-8fc5-c88f944df5c5">
