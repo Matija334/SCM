@@ -257,6 +257,92 @@ S pomočjo orodja [Figma](https://www.figma.com), ki omogoča enostavno in hitro
   Pregled vseh kontaktov za enega "Tenanta". Pogled je nastavljen na <b>seznam</b> ali na <b>mrežo</b>.
 </p>
 
+
+### Testiranje
+Za testiranje smo poskrbeli s sprotnim pisanjem unit testov. Teste smo napisali za sledeče entitete:
+- Events
+- PredefinedSearches
+- Tenants
+- Contacts
+
+Unit teste smo pisali tudi za vse Service razrede:
+- EventsServices
+- PredefinedSearchesServices
+- TenantsServices
+- ContactServices
+
+<p align="center">
+  <img alt="unit-test" width="1000" src="https://github.com/mihaprah/projekt/assets/116807398/a26b626f-a6b4-4996-808c-674972f7e3c4">
+  <br/>
+  Vsi pognani Unit testi
+</p>
+
+To nam je omogočalo, da smo z uporabo **GitHub Actions** naredili Workflow, ki nam je pognal vse teste, ki smo jih imeli v projektu z vsakim commitom na repozitorij. S tem smo lahko videli ali je nova koda, ki smo jo naložili na repozitorij pokvarila, katerega izmed testov in tako na napako tudi ustrezno reagirali s popravkom kode.
+
+Ob pisanju REST vmesnika (Controller razredov) smo testirali tudi vse **API končne točke**, da smo preverili ali še vedno delujejo pravilno. Torej ali sprejmejo in vrnejo podatke, kot jih morajo in hkrati kako reagirajo ob prejemu napačnih podatkov. Za to smo si pomagali z orodjem Swagger, ki nam je omogočalo pregled vseh API točk in podatkov s katerimi te delujejo. Swagger smo vključili v projekt, ta je dostopen na tem *[linku](https://projekt-test-environment.up.railway.app/swagger-ui/index.html)*.
+<p align="center">
+  <img alt="swagger-api" width="800" src="https://github.com/mihaprah/projekt/assets/116807398/a1983b6e-c604-4745-95c8-826ea1b2605f">
+  <br/>
+  Pregled APIja z orodjem Swagger
+</p>
+
+Orodje nam je omogočalo tudi pregled vseh shem, ki se uporabljajo v API klicih.
+
+<p align="center">
+  <img alt="swagger-sheme" width="800" src="https://github.com/mihaprah/projekt/assets/116807398/ae72425e-5976-4813-aaac-d4de057d352a">
+  <br/>
+  Pregled shem, ki jih uporablja API z orodjem Swagger
+</p>
+
+### GitHub Actions
+V projektu smo tudi vzpostavili workflow, ki se je zaganjal ob vsakem pushu sprememb. Ta workflow je bil sestavljen iz 3. korakov
+1. Najprej se je pognal **build** za frontend in **build** za backend
+2. V drugem koraku se poženejo **Unit testi** za backend
+3. Na koncu se izvede **SonarCloud** pregled kode
+
+Če so vsi koraki uspešni, izgleda graf izvedbe takole
+<p align="center">
+  <img alt="swagger-sheme" width="800" src="https://github.com/mihaprah/projekt/assets/116807398/992ffae7-b8d5-4af6-b689-4a20a1e11a35">
+</p>
+
+
+### Optimizacija kode
+Za optimizacijo kode in pregled kode, smo uporabili orodje [SonarCloud](https://sonarcloud.io/), ki nam je omogočalo, da smo v **GitHub Actions** Workflow vključili neprestan pregled kode. Repozitorij smo povezali s SonarCloudom in tako dobili dostop do nadzorne plošče projekta. Na njej smo lahko gledali kakšna je koda glede na:
+- Vzdrževanost
+- Zanesljivost
+- Varnost
+
+Če smo opazili velika odstopanje, ali pa je padel **Quality Gate**, smo kodo nemudoma popravili po pravilih in s predlogi orodja SonarCloud. To nam je omogočalo, da se problemi s kodo niso stopnjevali, saj smo jih rešili pravočasno.
+
+<p align="center">
+  <img alt="sonarcloud-dashborad" width="800" src="https://github.com/mihaprah/projekt/assets/116807398/7ccceb9b-14f8-428c-afcf-53a19cf8de10">
+  <br/>
+  Pregled nadzorne plošče v orodju SonarCloud
+</p>
+
+
+### Uporabniške zgodbe
+Osnova za pisanje testnih scenarijev so bile uporabniške zgodbe, ki so nam povedale, kdo bi rad v aplikaciji kaj naredil. Uporabniške zgodbe so bile:
+1. 
+
+Uporabniške zgodbe so na voljo v mapi [**documentation/test-cases-and-user-stories.pdf**](https://github.com/Matija334/SCM/blob/main/documentation/test-cases-and-user-stories.pdf).
+
+### Testni scenariji
+Za boljše zagotavljanje kakovosti, večjo zanesljivost in lažje vzdrževanje programske opreme, smo napisali 10 testnih scenarijev. To nam je omogočalo, da smo hitreje zaznali morebitne napake v kodi in jih hitro lahko popravili. Kodo je bilo tako tudi dosti lažje vzdrževati. Testni scenariji so bili sledeči:
+1. Registracija novega uporabnika
+2. Prijava uporabnika
+3. Dodajanje nove skupine (Tenant)
+4. Dodajanje novega kontakta
+5. Posodabljanje kontakta
+6. Nastavljanje nastavitev za skupino (Tenant)
+7. Brisanje kontakta
+8. Revertanje kontakta
+9. Dodajanje značk večim kontaktom
+10. Izvoz določenih kontaktov
+
+Testni scenariji so na voljo v mapi [**documentation/test-cases-and-user-stories.pdf**](https://github.com/Matija334/SCM/blob/main/documentation/test-cases-and-user-stories.pdf).
+
+
 ## 3. Navodila za namestitev lokalno
 
 #### Koraki za zagon
